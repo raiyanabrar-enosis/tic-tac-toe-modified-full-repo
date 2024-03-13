@@ -1,0 +1,21 @@
+services:
+  frontend:
+    image: tictactoe/webapp
+    container_name: tictactoe-webapp
+    build:
+      context: ./tic-tac-toe
+      dockerfile: ./Dockerfile
+    ports:
+      - 6000:5173
+    depends_on:
+      - server
+
+  server:
+    image: tictactoe/server
+    container_name: tictactoe-server
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+      - 8888:8888
