@@ -6,7 +6,7 @@ services:
       context: ./tic-tac-toe
       dockerfile: ./Dockerfile
     ports:
-      - 6000:5173
+      - 8000:5173
     depends_on:
       - server
 
